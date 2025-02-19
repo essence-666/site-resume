@@ -1,13 +1,5 @@
-FROM ubuntu:22.04
+FROM essence666/resume
 
-WORKDIR /project
-
-COPY dist dist 
-
-RUN apt update && apt install nginx -y
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
